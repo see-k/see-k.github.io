@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Chike Okonta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <aside class="pill-nav" id="sidebar">
+      <a class="pill-item" href="index.html"><span class="icon">⌂</span><span class="pill-label">Home</span></a>
+      <a class="pill-item active" href="projects.html"><span class="icon">◫</span><span class="pill-label">Projects</span></a>
+      <a class="pill-item" href="writing.html"><span class="icon">✎</span><span class="pill-label">Writing</span></a>
+      <a class="pill-item" href="about.html"><span class="icon">◎</span><span class="pill-label">About</span></a>
+      <a class="pill-item" href="https://github.com/chikefo" target="_blank" rel="noreferrer"><span class="icon">↗</span><span class="pill-label">GitHub</span></a>
+      <a class="pill-item" href="https://chikeokonta.com" target="_blank" rel="noreferrer"><span class="icon">◇</span><span class="pill-label">Main site</span></a>
+    </aside>
+    <div class="content-shell">
+      <header class="topbar container"><div><div class="eyebrow">Projects</div><strong class="topbar-title">Technical work in more detail</strong></div></header>
+      <main class="section container page-gap">
+        <div class="section-heading"><span class="section-tag">Selected work</span><h1 class="page-title">Projects</h1><p>Case-study style summaries for systems, tools, and experiments with technical depth.</p></div>
+        <div class="card-grid">
+          <article class="panel project-card"><div class="project-topline">AI / orchestration</div><h3>Autopilot systems</h3><p>Persistent task handling, event-driven execution, agent coordination, and operational memory for systems that need to do more than answer prompts.</p><ul><li>Workflow state</li><li>Task routing</li><li>Human-in-the-loop boundaries</li></ul></article>
+          <article class="panel project-card"><div class="project-topline">Developer tools</div><h3>Node + local runtime experiments</h3><p>Execution environments, node-based capability models, and practical operator experiences for tool-using systems.</p><ul><li>Local-first execution</li><li>CLI/API integration</li><li>Operator UX</li></ul></article>
+          <article class="panel project-card"><div class="project-topline">Systems thinking</div><h3>Technical product architecture</h3><p>Notes and prototypes around control planes, execution planes, and the difference between novelty and durable leverage.</p><ul><li>Architecture notes</li><li>Platform tradeoffs</li><li>Engineering strategy</li></ul></article>
+        </div>
+      </main>
+      <footer class="site-footer container"><p>© <span id="year"></span> Chike Okonta</p></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

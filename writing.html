@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing — Chike Okonta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <aside class="pill-nav" id="sidebar">
+      <a class="pill-item" href="index.html"><span class="icon">⌂</span><span class="pill-label">Home</span></a>
+      <a class="pill-item" href="projects.html"><span class="icon">◫</span><span class="pill-label">Projects</span></a>
+      <a class="pill-item active" href="writing.html"><span class="icon">✎</span><span class="pill-label">Writing</span></a>
+      <a class="pill-item" href="about.html"><span class="icon">◎</span><span class="pill-label">About</span></a>
+      <a class="pill-item" href="https://github.com/chikefo" target="_blank" rel="noreferrer"><span class="icon">↗</span><span class="pill-label">GitHub</span></a>
+      <a class="pill-item" href="https://chikeokonta.com" target="_blank" rel="noreferrer"><span class="icon">◇</span><span class="pill-label">Main site</span></a>
+    </aside>
+    <div class="content-shell">
+      <header class="topbar container"><div><div class="eyebrow">Writing</div><strong class="topbar-title">Posts, notes, and build logs</strong></div></header>
+      <main class="section container page-gap">
+        <div class="section-heading"><span class="section-tag">Essays</span><h1 class="page-title">Writing</h1><p>A lightweight technical writing section for engineering essays, architecture notes, and build logs.</p></div>
+        <div class="post-list panel">
+          <a class="post-row" href="posts/true-autopilot.html"><div><span class="post-date">March 2026</span><h3>What true autopilot actually requires</h3></div><p>Why real autonomy needs orchestration, memory, execution boundaries, and a clear control plane.</p></a>
+          <a class="post-row" href="posts/control-vs-execution.html"><div><span class="post-date">March 2026</span><h3>Control plane vs execution plane for agent systems</h3></div><p>A practical framing for designing systems that coordinate intelligently without becoming chaotic.</p></a>
+        </div>
+      </main>
+      <footer class="site-footer container"><p>© <span id="year"></span> Chike Okonta</p></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
