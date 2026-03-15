@@ -18,136 +18,158 @@
   </head>
   <body>
     <div class="noise"></div>
-    <header class="site-header container">
-      <a class="brand" href="/">chike.github.io</a>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#writing">Writing</a>
-        <a href="#about">About</a>
-        <a href="https://chikeokonta.com" target="_blank" rel="noreferrer">Main site</a>
-      </nav>
-    </header>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="true">☰</button>
 
-    <main>
-      <section class="hero container">
-        <div class="eyebrow">Developer portfolio / technical writing / build notes</div>
-        <h1>Chike Okonta</h1>
-        <p class="hero-copy">
-          I build software, agent systems, and practical automation. This is the more technical side of my work — detailed portfolio notes, architecture thinking, experiments, and posts for people who care how things are built.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">View projects</a>
-          <a class="button secondary" href="#writing">Read posts</a>
-        </div>
-        <div class="meta-grid">
-          <div class="meta-card">
-            <span class="meta-label">Focus</span>
-            <strong>AI systems, dev tooling, automation</strong>
-          </div>
-          <div class="meta-card">
-            <span class="meta-label">Style</span>
-            <strong>Product-minded engineering with sharp execution</strong>
-          </div>
-          <div class="meta-card">
-            <span class="meta-label">Elsewhere</span>
-            <strong><a href="https://github.com/chikefo" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://chikeokonta.com" target="_blank" rel="noreferrer">Website</a></strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="section container" id="projects">
-        <div class="section-heading">
-          <span class="section-tag">Selected work</span>
-          <h2>Projects with technical depth</h2>
-          <p>Detailed case-study style cards, tuned for engineers and technical collaborators.</p>
-        </div>
-        <div class="card-grid">
-          <article class="panel project-card">
-            <div class="project-topline">AI / orchestration</div>
-            <h3>Autopilot systems</h3>
-            <p>
-              Work around persistent task handling, event-driven execution, agent coordination, and operational memory for systems that are meant to do more than answer prompts.
-            </p>
-            <ul>
-              <li>Long-lived workflow thinking</li>
-              <li>Execution vs control-plane separation</li>
-              <li>Human-in-the-loop safety patterns</li>
-            </ul>
-          </article>
-          <article class="panel project-card">
-            <div class="project-topline">Developer tools</div>
-            <h3>Node + local runtime experiments</h3>
-            <p>
-              Experiments around local execution environments, node-based capability models, and ways of making tool-using systems more useful to technical operators.
-            </p>
-            <ul>
-              <li>Local-first execution</li>
-              <li>CLI and API integration</li>
-              <li>Practical operator UX</li>
-            </ul>
-          </article>
-          <article class="panel project-card">
-            <div class="project-topline">Systems thinking</div>
-            <h3>Technical product architecture</h3>
-            <p>
-              Notes and prototypes on how products create real leverage: what belongs in a runtime, what belongs in a control plane, and what actually becomes durable moat.
-            </p>
-            <ul>
-              <li>Architecture notes</li>
-              <li>Platform tradeoffs</li>
-              <li>Engineering strategy</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section container" id="writing">
-        <div class="section-heading">
-          <span class="section-tag">Writing</span>
-          <h2>Posts, notes, and build logs</h2>
-          <p>A lightweight blog section for technical essays, project deep-dives, and engineering writeups.</p>
-        </div>
-        <div class="post-list panel">
-          <a class="post-row" href="posts/true-autopilot.html">
-            <div>
-              <span class="post-date">March 2026</span>
-              <h3>What true autopilot actually requires</h3>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-top">
+          <div class="brand-lockup">
+            <span class="brand-mark">⌘</span>
+            <div class="brand-text">
+              <strong>see-k.github.io</strong>
+              <span>Technical portfolio</span>
             </div>
-            <p>Why real autonomy needs orchestration, memory, execution boundaries, and a clear control plane.</p>
-          </a>
-          <a class="post-row" href="posts/control-vs-execution.html">
-            <div>
-              <span class="post-date">March 2026</span>
-              <h3>Control plane vs execution plane for agent systems</h3>
-            </div>
-            <p>A practical framing for designing systems that coordinate intelligently without becoming chaotic.</p>
-          </a>
+          </div>
+          <button class="collapse-toggle" id="collapseToggle" aria-label="Collapse sidebar">←</button>
         </div>
-      </section>
 
-      <section class="section container" id="about">
-        <div class="section-heading">
-          <span class="section-tag">About</span>
-          <h2>Why this site exists</h2>
-        </div>
-        <div class="panel about-panel">
-          <p>
-            <strong>chikeokonta.com</strong> is my broader personal site. <strong>chike.github.io</strong> is the more technical companion: deeper project context, engineering notes, blog posts, and the kind of details that matter more to technical readers than to a general audience.
-          </p>
-          <p>
-            Over time, this will become a better map of how I think, what I build, and the kinds of systems I’m interested in shipping.
-          </p>
-        </div>
-      </section>
-    </main>
+        <nav class="sidebar-nav">
+          <a href="#top"><span class="icon">⌂</span><span class="nav-label">Home</span></a>
+          <a href="#projects"><span class="icon">◫</span><span class="nav-label">Projects</span></a>
+          <a href="#writing"><span class="icon">✎</span><span class="nav-label">Writing</span></a>
+          <a href="#about"><span class="icon">◎</span><span class="nav-label">About</span></a>
+          <a href="https://github.com/chikefo" target="_blank" rel="noreferrer"><span class="icon">↗</span><span class="nav-label">GitHub</span></a>
+          <a href="https://chikeokonta.com" target="_blank" rel="noreferrer"><span class="icon">◇</span><span class="nav-label">Main site</span></a>
+        </nav>
 
-    <footer class="site-footer container">
-      <p>© <span id="year"></span> Chike Okonta</p>
-      <div>
-        <a href="https://github.com/chikefo" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://chikeokonta.com" target="_blank" rel="noreferrer">Website</a>
+        <div class="sidebar-footer">
+          <p>Built for engineers, collaborators, and technically curious people.</p>
+        </div>
       </div>
-    </footer>
+    </aside>
+
+    <div class="content-shell" id="top">
+      <main>
+        <section class="hero container">
+          <div class="eyebrow">Developer portfolio / technical writing / build notes</div>
+          <h1>Chike Okonta</h1>
+          <p class="hero-copy">
+            I build software, agent systems, and practical automation. This is the more technical side of my work — detailed portfolio notes, architecture thinking, experiments, and posts for people who care how things are built.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button secondary" href="#writing">Read posts</a>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <span class="meta-label">Focus</span>
+              <strong>AI systems, dev tooling, automation</strong>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Style</span>
+              <strong>Product-minded engineering with sharp execution</strong>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Elsewhere</span>
+              <strong><a href="https://github.com/chikefo" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://chikeokonta.com" target="_blank" rel="noreferrer">Website</a></strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="section container" id="projects">
+          <div class="section-heading">
+            <span class="section-tag">Selected work</span>
+            <h2>Projects with technical depth</h2>
+            <p>Detailed case-study style cards, tuned for engineers and technical collaborators.</p>
+          </div>
+          <div class="card-grid">
+            <article class="panel project-card">
+              <div class="project-topline">AI / orchestration</div>
+              <h3>Autopilot systems</h3>
+              <p>
+                Work around persistent task handling, event-driven execution, agent coordination, and operational memory for systems that are meant to do more than answer prompts.
+              </p>
+              <ul>
+                <li>Long-lived workflow thinking</li>
+                <li>Execution vs control-plane separation</li>
+                <li>Human-in-the-loop safety patterns</li>
+              </ul>
+            </article>
+            <article class="panel project-card">
+              <div class="project-topline">Developer tools</div>
+              <h3>Node + local runtime experiments</h3>
+              <p>
+                Experiments around local execution environments, node-based capability models, and ways of making tool-using systems more useful to technical operators.
+              </p>
+              <ul>
+                <li>Local-first execution</li>
+                <li>CLI and API integration</li>
+                <li>Practical operator UX</li>
+              </ul>
+            </article>
+            <article class="panel project-card">
+              <div class="project-topline">Systems thinking</div>
+              <h3>Technical product architecture</h3>
+              <p>
+                Notes and prototypes on how products create real leverage: what belongs in a runtime, what belongs in a control plane, and what actually becomes durable moat.
+              </p>
+              <ul>
+                <li>Architecture notes</li>
+                <li>Platform tradeoffs</li>
+                <li>Engineering strategy</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container" id="writing">
+          <div class="section-heading">
+            <span class="section-tag">Writing</span>
+            <h2>Posts, notes, and build logs</h2>
+            <p>A lightweight blog section for technical essays, project deep-dives, and engineering writeups.</p>
+          </div>
+          <div class="post-list panel">
+            <a class="post-row" href="posts/true-autopilot.html">
+              <div>
+                <span class="post-date">March 2026</span>
+                <h3>What true autopilot actually requires</h3>
+              </div>
+              <p>Why real autonomy needs orchestration, memory, execution boundaries, and a clear control plane.</p>
+            </a>
+            <a class="post-row" href="posts/control-vs-execution.html">
+              <div>
+                <span class="post-date">March 2026</span>
+                <h3>Control plane vs execution plane for agent systems</h3>
+              </div>
+              <p>A practical framing for designing systems that coordinate intelligently without becoming chaotic.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="section container" id="about">
+          <div class="section-heading">
+            <span class="section-tag">About</span>
+            <h2>Why this site exists</h2>
+          </div>
+          <div class="panel about-panel">
+            <p>
+              <strong>chikeokonta.com</strong> is my broader personal site. <strong>see-k.github.io</strong> is the more technical companion: deeper project context, engineering notes, blog posts, and the kind of details that matter more to technical readers than to a general audience.
+            </p>
+            <p>
+              Over time, this will become a better map of how I think, what I build, and the kinds of systems I’m interested in shipping.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer container">
+        <p>© <span id="year"></span> Chike Okonta</p>
+        <div>
+          <a href="https://github.com/chikefo" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://chikeokonta.com" target="_blank" rel="noreferrer">Website</a>
+        </div>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
