@@ -1,4 +1,5 @@
-document.getElementById('year')?.append(new Date().getFullYear());
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 const menuToggle = document.getElementById('menuToggle');
 menuToggle?.addEventListener('click', () => {
   document.body.classList.toggle('mobile-sidebar-open');

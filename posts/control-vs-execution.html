@@ -3,19 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control plane vs execution plane for agent systems</title>
+    <title>Control plane vs execution plane — Chike Okonta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <main class="article container">
-      <article class="article-shell">
-        <div class="code-chip">Systems note</div>
-        <h1>Control plane vs execution plane for agent systems</h1>
-        <p>One of the biggest design mistakes in agent products is asking one layer to do everything. A system that decides, records, routes, and governs work is solving a different problem from the system that actually performs the work.</p>
-        <p>Separating those concerns makes it easier to reason about autonomy, permissions, state, and failure handling. The control plane should know what exists and what should happen. The execution plane should know how to carry out bounded work well.</p>
-        <p>That split becomes especially important for long-running autonomous systems where recursion, stale context, and capability drift can become expensive fast.</p>
-        <p><a href="../index.html">← Back home</a></p>
-      </article>
-    </main>
+    <div class="noise"></div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <aside class="pill-nav" id="sidebar">
+      <a class="pill-item" href="../index.html"><span class="icon">⌂</span><span class="pill-label">Home</span></a>
+      <a class="pill-item" href="../projects.html"><span class="icon">◫</span><span class="pill-label">Projects</span></a>
+      <a class="pill-item active" href="../writing.html"><span class="icon">✎</span><span class="pill-label">Writing</span></a>
+      <a class="pill-item" href="../about.html"><span class="icon">◎</span><span class="pill-label">About</span></a>
+      <a class="pill-item" href="https://github.com/chikefo" target="_blank" rel="noreferrer"><span class="icon">↗</span><span class="pill-label">GitHub</span></a>
+      <a class="pill-item" href="https://chikeokonta.com" target="_blank" rel="noreferrer"><span class="icon">◇</span><span class="pill-label">Main site</span></a>
+    </aside>
+    <div class="content-shell">
+      <header class="topbar container"><div><div class="eyebrow">Writing</div><strong class="topbar-title">Systems note</strong></div></header>
+      <main class="article container">
+        <article class="article-shell panel article-panel">
+          <div class="code-chip">Systems note</div>
+          <h1>Control plane vs execution plane for agent systems</h1>
+          <p>One of the biggest design mistakes in agent products is asking one layer to do everything. A system that decides, records, routes, and governs work is solving a different problem from the system that actually performs the work.</p>
+          <p>Separating those concerns makes it easier to reason about autonomy, permissions, state, and failure handling. The control plane should know what exists and what should happen. The execution plane should know how to carry out bounded work well.</p>
+          <p>That split becomes especially important for long-running autonomous systems where recursion, stale context, and capability drift can become expensive fast.</p>
+          <p><a href="../writing.html">← Back to writing</a></p>
+        </article>
+      </main>
+      <footer class="site-footer container"><p>© <span id="year"></span> Chike Okonta</p></footer>
+    </div>
+    <script src="../script.js"></script>
   </body>
 </html>

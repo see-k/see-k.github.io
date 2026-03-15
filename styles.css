@@ -161,6 +161,7 @@ body::before {
 .site-footer a:hover, a:hover { color: var(--accent); }
 .article { padding: 4rem 0 5rem; }
 .article-shell { max-width: 780px; margin: 0 auto; }
+.article-panel { padding: 1.75rem; }
 .article-shell h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.05; margin-bottom: 0.8rem; }
 .article-shell p, .article-shell li { color: var(--muted); }
 .code-chip {
