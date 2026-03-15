@@ -13,6 +13,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  min-height: 100vh;
   background:
     radial-gradient(circle at top left, rgba(120, 224, 216, 0.08), transparent 28%),
     radial-gradient(circle at top right, rgba(89, 109, 255, 0.08), transparent 24%),
@@ -50,26 +51,26 @@ body::before {
 }
 .pill-item {
   position: relative;
-  width: 56px;
+  width: 64px;
+  min-width: 64px;
   height: 56px;
   border-radius: 999px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-decoration: none;
   color: var(--text);
   background: rgba(13, 17, 23, 0.88);
   border: 1px solid var(--panel-border);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow);
-  transition: width 180ms ease, justify-content 180ms ease, background 180ms ease, border-color 180ms ease;
+  transition: width 180ms ease, background 180ms ease, border-color 180ms ease;
   overflow: hidden;
+  padding-left: 1.05rem;
 }
 .pill-item:hover,
 .pill-item.active {
   width: 154px;
-  justify-content: flex-start;
-  padding-left: 1rem;
   background: rgba(18, 24, 31, 0.96);
   border-color: rgba(120, 224, 216, 0.28);
 }
@@ -79,6 +80,7 @@ body::before {
   color: var(--accent);
   flex: 0 0 22px;
   font-size: 1rem;
+  opacity: 1;
 }
 .pill-label {
   opacity: 0;
@@ -108,11 +110,15 @@ body::before {
 }
 .content-shell {
   margin-left: 6.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .topbar { padding: 1.4rem 0 0; }
 .topbar-title { font-size: 0.98rem; }
-.hero { padding: 5rem 0 4rem; }
+.hero { padding: 5rem 0 2.5rem; }
 .page-gap { padding-top: 2.6rem; padding-bottom: 2rem; }
+main { flex: 1; }
 .page-title, .hero h1 { font-size: clamp(3rem, 9vw, 6rem); line-height: 0.95; margin: 0.5rem 0 1rem; }
 .eyebrow, .section-tag, .meta-label, .project-topline, .post-date {
   text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.74rem; color: var(--accent);
@@ -126,6 +132,7 @@ body::before {
 .button.primary { background: var(--text); color: #0b0e11; }
 .button.secondary { background: var(--accent-soft); color: var(--text); border-color: var(--panel-border); }
 .meta-grid, .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.meta-grid { margin-top: 1rem; }
 .panel, .meta-card {
   background: var(--panel);
   border: 1px solid var(--panel-border);
@@ -153,7 +160,7 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 0 2rem;
+  padding: 1.25rem 0 2rem;
   color: var(--muted);
 }
 .site-footer div { display: flex; gap: 1rem; }
