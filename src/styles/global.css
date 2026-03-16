@@ -141,6 +141,31 @@ main { flex: 1; }
   backdrop-filter: blur(12px);
 }
 .meta-card, .project-card, .about-panel { padding: 1.5rem; }
+.about-panel--split {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.profile-pic {
+  width: 360px;
+  height: 560px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--panel-border);
+}
+.about-body {
+  flex: 1;
+}
+@media (max-width: 640px) {
+  .about-panel--split {
+    flex-direction: column;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
 .section-heading { max-width: 760px; margin-bottom: 1.5rem; }
 .section-heading h1, .section-heading h2 { margin: 0.35rem 0 0.5rem; }
 .section-heading p, .project-card p, .project-card li, .post-row p, .about-panel p { color: var(--muted); }
