@@ -2,10 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const postModules = import.meta.glob('./posts/*.md', { eager: true });
-const posts = Object.entries(postModules).map(([path, mod]: [string, any]) => ({
-  url: path.replace('./posts/', '/posts/').replace('.md', ''),
-  frontmatter: mod.frontmatter,
-}));
+const posts = Object.entries(postModules)
+  .map(([path, mod]: [string, any]) => ({
+    url: path.replace('./posts/', '/posts/').replace('.md', ''),
+    frontmatter: mod.frontmatter,
+  }))
+  .sort((a, b) => (b.frontmatter.sortOrder ?? 0) - (a.frontmatter.sortOrder ?? 0));
+
+const featuredPublication = posts.find((post) => post.frontmatter.featured);
+const remainingPosts = posts.filter((post) => !post.frontmatter.featured);
 ---
 
 <BaseLayout title="Writing — Chike Okonta" activeNav="writing">
@@ -24,13 +29,36 @@ const posts = Object.entries(postModules).map(([path, mod]: [string, any]) => ({
         build logs.
       </p>
     </div>
+    {featuredPublication && (
+      <div class="panel featured-publication">
+        <div class="home-feature-label">Featured publication</div>
+        <h2 class="home-feature-title">{featuredPublication.frontmatter.title}</h2>
+        <p class="home-feature-desc">{featuredPublication.frontmatter.description}</p>
+        <div class="publication-strip">
+          <span class="publication-pill">{featuredPublication.frontmatter.type}</span>
+          {featuredPublication.frontmatter.publisher && (
+            <span class="publication-pill">{featuredPublication.frontmatter.publisher}</span>
+          )}
+          {featuredPublication.frontmatter.doi && (
+            <span class="publication-pill">DOI: {featuredPublication.frontmatter.doi}</span>
+          )}
+        </div>
+        <div class="home-feature-links">
+          <a href={featuredPublication.url}>Read overview →</a>
+          {featuredPublication.frontmatter.externalUrl && (
+            <a href={featuredPublication.frontmatter.externalUrl} target="_blank" rel="noreferrer">Published paper ↗</a>
+          )}
+        </div>
+      </div>
+    )}
     <div class="post-list panel">
       {
-        posts.map((post) => (
+        remainingPosts.map((post) => (
           <a class="post-row" href={post.url}>
             <div>
               <span class="post-date">{post.frontmatter.date}</span>
               <h3>{post.frontmatter.title}</h3>
+              <div class="post-row-type">{post.frontmatter.type}</div>
             </div>
             <p>{post.frontmatter.description}</p>
           </a>

@@ -4,6 +4,11 @@ title: "DAN: A Dynamic, Distributed Agent Network for Scalable and Adaptive Orch
 date: "March 2026"
 type: "Research paper"
 description: "DAN introduces a distributed architecture that separates global coordination from local learning — enabling multi-agent AI systems to specialize, scale horizontally, and remain fault-tolerant without centralizing orchestration."
+featured: true
+sortOrder: 100
+doi: "10.5281/zenodo.19041902"
+externalUrl: "https://zenodo.org/records/19041902"
+publisher: "Zenodo"
 ---
 
 This paper introduces **DAN (Dynamic Agent Network)**, a distributed architecture for orchestrating adaptive multi-agent AI systems at scale. The core insight is that global coordination and local learning are different concerns and conflating them into a single orchestrator creates brittle, unscalable systems.

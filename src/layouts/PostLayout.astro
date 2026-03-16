@@ -7,6 +7,9 @@ interface Props {
     date: string;
     type: string;
     description: string;
+    doi?: string;
+    externalUrl?: string;
+    publisher?: string;
   };
 }
 
@@ -24,6 +27,16 @@ const { frontmatter } = Astro.props;
     <article class="article-shell panel article-panel">
       <div class="code-chip">{frontmatter.type}</div>
       <h1>{frontmatter.title}</h1>
+      <div class="post-meta-bar">
+        <span>{frontmatter.date}</span>
+        {frontmatter.publisher && <span>{frontmatter.publisher}</span>}
+        {frontmatter.doi && <span>DOI: {frontmatter.doi}</span>}
+      </div>
+      {frontmatter.externalUrl && (
+        <div class="publication-links">
+          <a href={frontmatter.externalUrl} target="_blank" rel="noreferrer">Read published version ↗</a>
+        </div>
+      )}
       <slot />
       <p><a href="/writing">← Back to writing</a></p>
     </article>
