@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: 'home' | 'projects' | 'writing' | 'about';
+}
+
+const {
+  title,
+  description = 'Engineering portfolio and technical work by Chike Okonta.',
+  activeNav,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"
+      >☰</button
+    >
+
+    <aside class="pill-nav" id="sidebar">
+      <a class={`pill-item${activeNav === 'home' ? ' active' : ''}`} href="/" aria-label="Home">
+        <span class="icon">⌂</span><span class="pill-label">Home</span>
+      </a>
+      <a
+        class={`pill-item${activeNav === 'projects' ? ' active' : ''}`}
+        href="/projects"
+        aria-label="Projects"
+      >
+        <span class="icon">◫</span><span class="pill-label">Projects</span>
+      </a>
+      <a
+        class={`pill-item${activeNav === 'writing' ? ' active' : ''}`}
+        href="/writing"
+        aria-label="Writing"
+      >
+        <span class="icon">✎</span><span class="pill-label">Writing</span>
+      </a>
+      <a
+        class={`pill-item${activeNav === 'about' ? ' active' : ''}`}
+        href="/about"
+        aria-label="About"
+      >
+        <span class="icon">◎</span><span class="pill-label">About</span>
+      </a>
+      <a
+        class="pill-item"
+        href="https://github.com/chikefo"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+      >
+        <span class="icon">↗</span><span class="pill-label">GitHub</span>
+      </a>
+      <a
+        class="pill-item"
+        href="https://chikeokonta.com"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Main site"
+      >
+        <span class="icon">◇</span><span class="pill-label">Main site</span>
+      </a>
+    </aside>
+
+    <div class="content-shell">
+      <slot />
+
+      <footer class="site-footer container">
+        <p>© {new Date().getFullYear()} Chike Okonta</p>
+        <div>
+          <a href="https://github.com/chikefo" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://chikeokonta.com" target="_blank" rel="noreferrer">Website</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById('menuToggle');
+      menuToggle?.addEventListener('click', () => {
+        document.body.classList.toggle('mobile-sidebar-open');
+        menuToggle.setAttribute(
+          'aria-expanded',
+          String(document.body.classList.contains('mobile-sidebar-open')),
+        );
+      });
+      document.querySelectorAll('#sidebar a').forEach((link) => {
+        link.addEventListener('click', () => document.body.classList.remove('mobile-sidebar-open'));
+      });
+    </script>
+  </body>
+</html>

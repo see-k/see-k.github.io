@@ -1,0 +1,31 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    date: string;
+    type: string;
+    description: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={`${frontmatter.title} — Chike Okonta`} activeNav="writing">
+  <header class="topbar container">
+    <div>
+      <div class="eyebrow">Writing</div>
+      <strong class="topbar-title">{frontmatter.type}</strong>
+    </div>
+  </header>
+  <main class="article container">
+    <article class="article-shell panel article-panel">
+      <div class="code-chip">{frontmatter.type}</div>
+      <h1>{frontmatter.title}</h1>
+      <slot />
+      <p><a href="/writing">← Back to writing</a></p>
+    </article>
+  </main>
+</BaseLayout>
