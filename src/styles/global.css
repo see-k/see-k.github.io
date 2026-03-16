@@ -188,7 +188,9 @@ main { flex: 1; }
   padding: 1.25rem 0 2rem;
   color: var(--muted);
 }
-.site-footer div { display: flex; gap: 1rem; }
+.site-footer div, .footer-icons { display: flex; gap: 1rem; }
+.footer-icons a { display: flex; align-items: center; color: var(--muted); transition: color 140ms ease; }
+.footer-icons a:hover { color: var(--accent); }
 .site-footer a, a { color: inherit; }
 .site-footer a:hover, a:hover { color: var(--accent); }
 .article { padding: 4rem 0 5rem; }
