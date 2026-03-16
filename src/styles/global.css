@@ -170,6 +170,17 @@ main { flex: 1; }
 .section-heading h1, .section-heading h2 { margin: 0.35rem 0 0.5rem; }
 .section-heading p, .project-card p, .project-card li, .post-row p, .about-panel p { color: var(--muted); }
 .project-card ul { padding-left: 1rem; margin-bottom: 0; }
+.project-card--featured { grid-column: 1 / -1; }
+.project-links { display: flex; gap: 1.25rem; margin-top: 1.25rem; }
+.project-links a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+.project-links a:hover { text-decoration: underline; }
+.home-feature { padding: 1.75rem; margin-bottom: 3rem; }
+.home-feature-label { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); margin-bottom: 0.5rem; }
+.home-feature-title { font-size: 1.4rem; margin: 0 0 0.6rem; }
+.home-feature-desc { color: var(--muted); margin: 0 0 1.1rem; max-width: 680px; }
+.home-feature-links { display: flex; gap: 1.25rem; }
+.home-feature-links a { font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+.home-feature-links a:hover { text-decoration: underline; }
 .post-list { padding: 0.6rem; }
 .post-row {
   display: grid;

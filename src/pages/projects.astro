@@ -16,6 +16,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>Case-study style summaries for systems, tools, and experiments with technical depth.</p>
     </div>
     <div class="card-grid">
+      <article class="panel project-card project-card--featured">
+        <div class="project-topline">Research · March 2026</div>
+        <h3>DAN: Dynamic Agent Network</h3>
+        <p>
+          A distributed architecture for orchestrating adaptive multi-agent AI systems at scale.
+          Separates global coordination (stateless router with bandit-based planner selection) from
+          local learning (case-based Q-learning with non-parametric episodic memory), enabling
+          horizontal scaling and fault isolation across distributed server pods.
+        </p>
+        <ul>
+          <li>Global router + specialized local planners</li>
+          <li>Case-based Q-learning with Boltzmann retrieval</li>
+          <li>A2A ↔ MCP protocol bridging layer</li>
+          <li>Optimized for small models at the edge</li>
+        </ul>
+        <div class="project-links">
+          <a href="/posts/dan-dynamic-agent-network">Read overview →</a>
+          <a href="https://zenodo.org/records/19041902" target="_blank" rel="noreferrer">Zenodo ↗</a>
+        </div>
+      </article>
       <article class="panel project-card">
         <div class="project-topline">AI / orchestration</div>
         <h3>Autopilot systems</h3>
