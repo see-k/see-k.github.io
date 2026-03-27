@@ -50,8 +50,6 @@ rightRail:
       - "AGI apps optimize for breadth."
       - "DEAS optimizes for bounded trust, workflow fit, and cost discipline."
       - "A DEAS can still use general models internally."
-  - title: "Working equation"
-    body: "E_service(d) = w_m M + w_t T + w_r R + w_w W + w_p P + w_e V"
   - title: "When DEAS wins"
     bullets:
       - "Domain trust matters."
