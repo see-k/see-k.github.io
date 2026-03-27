@@ -143,9 +143,7 @@ A common mistake in AI discourse is to assume that expertise lives mainly inside
 
 For many deployed systems, useful expertise comes from the composition:
 
-```text
-Expertise ≈ f(model, tools, retrieval, workflow, memory, policies, evaluation)
-```
+<div class="equation-block"><code>Expertise ≈ f(model, tools, retrieval, workflow, memory, policies, evaluation)</code></div>
 
 A finance system can behave more like an expert than a more capable general model if it has:
 
@@ -159,9 +157,7 @@ A finance system can behave more like an expert than a more capable general mode
 
 This motivates a service-level definition of expertise:
 
-```text
-E_service(d) = w_m M + w_t T + w_r R + w_w W + w_p P + w_e V
-```
+<div class="equation-block"><code>E_service(d) = w_m M + w_t T + w_r R + w_w W + w_p P + w_e V</code></div>
 
 Where, for domain `d`:
 
@@ -250,9 +246,7 @@ DEAS is not defined by low cost. But if it cannot improve the **cost-to-value ra
 
 Suppose a user query has cost:
 
-```text
-C_total = C_inference + C_tools + C_retrieval + C_memory + C_governance
-```
+<div class="equation-block"><code>C_total = C_inference + C_tools + C_retrieval + C_memory + C_governance</code></div>
 
 In a broad AGI app, `C_inference` often dominates because the system uses:
 - large context windows
@@ -268,9 +262,7 @@ In a DEAS system, the hope is that cost shifts toward:
 
 So the DEAS target is not merely low absolute cost, but:
 
-```text
-Efficiency_DEAS = Useful Domain Output / C_total
-```
+<div class="equation-block"><code>Efficiency_DEAS = Useful Domain Output / C_total</code></div>
 
 A finance DEAS may beat a general system not because it is smarter in the abstract, but because it reaches a useful answer with:
 - less context
@@ -304,9 +296,7 @@ For example:
 
 This means DEAS has a social dimension:
 
-```text
-Adoption ≈ Technical Competence × Domain Legitimacy × Trust Surface
-```
+<div class="equation-block"><code>Adoption ≈ Technical Competence × Domain Legitimacy × Trust Surface</code></div>
 
 Where the trust surface includes:
 - product behavior
@@ -386,9 +376,7 @@ This is attractive because:
 
 A rough routing objective could be expressed as:
 
-```text
-Choose expert i* = argmax_i [ U_i(t) - λC_i(t) + μT_i(d) ]
-```
+<div class="equation-block"><code>Choose expert i* = argmax_i [ U_i(t) - λC_i(t) + μT_i(d) ]</code></div>
 
 Where:
 - `U_i(t)` = expected utility of expert `i` on task `t`
@@ -429,9 +417,7 @@ A useful whitepaper should not just define a concept; it should make the concept
 
 For a task family `T_d` inside domain `d`, define expected workflow efficacy as:
 
-```text
-W(T_d) = αA + βF + γR + δS - λC
-```
+<div class="equation-block"><code>W(T_d) = αA + βF + γR + δS - λC</code></div>
 
 Where:
 
@@ -502,10 +488,7 @@ A useful scorecard might look like this.
 
 Again, as an operating heuristic rather than a formal theorem:
 
-```text
-DEAS wins when:
-(domain trust gain + workflow fit gain + cost efficiency gain) > generality loss
-```
+<div class="equation-block"><code>DEAS wins when:</code><br /><code>(domain trust gain + workflow fit gain + cost efficiency gain) &gt; generality loss</code></div>
 
 That inequality will not hold in every category.
 
