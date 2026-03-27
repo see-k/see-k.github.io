@@ -7,6 +7,11 @@ interface RailItem {
   bullets?: string[];
 }
 
+interface TocItem {
+  label: string;
+  href: string;
+}
+
 interface Props {
   frontmatter: {
     title: string;
@@ -18,6 +23,8 @@ interface Props {
     publisher?: string;
     rightRailTitle?: string;
     rightRail?: RailItem[];
+    tocTitle?: string;
+    toc?: TocItem[];
   };
 }
 
@@ -32,7 +39,20 @@ const { frontmatter } = Astro.props;
     </div>
   </header>
   <main class="article container">
-    <div class={`article-layout${frontmatter.rightRail?.length ? ' article-layout--with-rail' : ''}`}>
+    <div class={`article-layout${frontmatter.toc?.length ? ' article-layout--with-toc' : ''}${frontmatter.rightRail?.length ? ' article-layout--with-rail' : ''}`}>
+      {frontmatter.toc?.length && (
+        <aside class="article-toc">
+          <div class="article-toc__inner">
+            <div class="article-toc__header">{frontmatter.tocTitle ?? 'On this page'}</div>
+            <nav class="article-toc__nav" aria-label="Table of contents">
+              {frontmatter.toc.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+            </nav>
+          </div>
+        </aside>
+      )}
+
       <article class="article-shell panel article-panel">
         <div class="code-chip">{frontmatter.type}</div>
         <h1>{frontmatter.title}</h1>

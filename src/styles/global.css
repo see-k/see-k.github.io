@@ -264,19 +264,32 @@ main { flex: 1; }
   gap: 1.5rem;
   align-items: start;
 }
+.article-layout--with-toc.article-layout--with-rail {
+  grid-template-columns: 230px minmax(0, 780px) 300px;
+}
+.article-layout--with-toc:not(.article-layout--with-rail) {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 780px);
+  gap: 1.5rem;
+  align-items: start;
+}
 .article-shell { max-width: 780px; margin: 0 auto; }
-.article-layout--with-rail .article-shell {
+.article-layout--with-rail .article-shell,
+.article-layout--with-toc .article-shell {
   max-width: none;
   margin: 0;
 }
 .article-panel { padding: 1.75rem; }
+.article-toc,
 .article-rail {
   position: relative;
 }
+.article-toc__inner,
 .article-rail__inner {
   position: sticky;
   top: 1.25rem;
 }
+.article-toc__header,
 .article-rail__header {
   margin-bottom: 0.75rem;
   color: var(--accent);
@@ -284,6 +297,27 @@ main { flex: 1; }
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+.article-toc__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.article-toc__nav a {
+  display: block;
+  padding: 0.7rem 0.8rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--muted);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+.article-toc__nav a:hover {
+  color: var(--text);
+  border-color: var(--panel-border);
+  background: rgba(255,255,255,0.035);
 }
 .article-rail__card {
   padding: 1rem 1rem 0.95rem;
@@ -359,10 +393,22 @@ main { flex: 1; }
   border-radius: 999px;
 }
 
+@media (max-width: 1380px) {
+  .article-layout--with-toc.article-layout--with-rail {
+    grid-template-columns: minmax(0, 780px) 300px;
+  }
+  .article-toc {
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
-  .article-layout--with-rail {
+  .article-layout--with-rail,
+  .article-layout--with-toc,
+  .article-layout--with-toc.article-layout--with-rail {
     grid-template-columns: minmax(0, 1fr);
   }
+  .article-toc__inner,
   .article-rail__inner {
     position: static;
   }
