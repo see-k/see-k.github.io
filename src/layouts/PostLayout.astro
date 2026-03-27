@@ -1,6 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 
+interface RailItem {
+  title: string;
+  body?: string;
+  bullets?: string[];
+}
+
 interface Props {
   frontmatter: {
     title: string;
@@ -10,6 +16,8 @@ interface Props {
     doi?: string;
     externalUrl?: string;
     publisher?: string;
+    rightRailTitle?: string;
+    rightRail?: RailItem[];
   };
 }
 
@@ -24,21 +32,42 @@ const { frontmatter } = Astro.props;
     </div>
   </header>
   <main class="article container">
-    <article class="article-shell panel article-panel">
-      <div class="code-chip">{frontmatter.type}</div>
-      <h1>{frontmatter.title}</h1>
-      <div class="post-meta-bar">
-        <span>{frontmatter.date}</span>
-        {frontmatter.publisher && <span>{frontmatter.publisher}</span>}
-        {frontmatter.doi && <span>DOI: {frontmatter.doi}</span>}
-      </div>
-      {frontmatter.externalUrl && (
-        <div class="publication-links">
-          <a href={frontmatter.externalUrl} target="_blank" rel="noreferrer">Read published version ↗</a>
+    <div class={`article-layout${frontmatter.rightRail?.length ? ' article-layout--with-rail' : ''}`}>
+      <article class="article-shell panel article-panel">
+        <div class="code-chip">{frontmatter.type}</div>
+        <h1>{frontmatter.title}</h1>
+        <div class="post-meta-bar">
+          <span>{frontmatter.date}</span>
+          {frontmatter.publisher && <span>{frontmatter.publisher}</span>}
+          {frontmatter.doi && <span>DOI: {frontmatter.doi}</span>}
         </div>
+        {frontmatter.externalUrl && (
+          <div class="publication-links">
+            <a href={frontmatter.externalUrl} target="_blank" rel="noreferrer">Read published version ↗</a>
+          </div>
+        )}
+        <slot />
+        <p><a href="/writing">← Back to writing</a></p>
+      </article>
+
+      {frontmatter.rightRail?.length && (
+        <aside class="article-rail">
+          <div class="article-rail__inner">
+            <div class="article-rail__header">{frontmatter.rightRailTitle ?? 'At a glance'}</div>
+            {frontmatter.rightRail.map((item) => (
+              <section class="article-rail__card panel">
+                <h3>{item.title}</h3>
+                {item.body && <p>{item.body}</p>}
+                {item.bullets?.length && (
+                  <ul>
+                    {item.bullets.map((bullet) => <li>{bullet}</li>)}
+                  </ul>
+                )}
+              </section>
+            ))}
+          </div>
+        </aside>
       )}
-      <slot />
-      <p><a href="/writing">← Back to writing</a></p>
-    </article>
+    </div>
   </main>
 </BaseLayout>

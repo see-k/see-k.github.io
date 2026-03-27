@@ -5,6 +5,31 @@ date: "March 2026"
 type: "Long-form essay"
 description: "A framework for specialized AI services that compete not by pretending to be general intelligence, but by becoming trustworthy, measurable, domain-bounded experts."
 sortOrder: 95
+rightRailTitle: "DEAS quick notes"
+rightRail:
+  - title: "Core thesis"
+    body: "DEAS argues that expertise should be built into the service boundary — not assumed to emerge automatically from a larger general-purpose model."
+  - title: "Key distinction"
+    bullets:
+      - "AGI apps optimize for breadth."
+      - "DEAS optimizes for bounded trust, workflow fit, and cost discipline."
+      - "A DEAS can still use general models internally."
+  - title: "Working equation"
+    body: "E_service(d) = w_m M + w_t T + w_r R + w_w W + w_p P + w_e V"
+  - title: "When DEAS wins"
+    bullets:
+      - "Domain trust matters."
+      - "Workflows are repetitive or structured."
+      - "Tooling and data are genuinely specialized."
+      - "Broad generality is unnecessary overhead."
+  - title: "Finance example"
+    bullets:
+      - "Portfolio Risk Expert"
+      - "Net Worth Analyst"
+      - "Congressional Trades Expert"
+      - "Document / Filing Analysis Expert"
+  - title: "Strategic implication"
+    body: "A broad runtime like OpenClaw can coexist with DEAS as the generalist intake/orchestration layer, while specialized DEAS units handle bounded domain execution."
 ---
 
 ## Abstract
