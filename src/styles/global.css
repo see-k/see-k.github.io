@@ -259,6 +259,49 @@ main { flex: 1; }
 .article-panel { padding: 1.75rem; }
 .article-shell h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.05; margin-bottom: 0.8rem; }
 .article-shell p, .article-shell li { color: var(--muted); }
+.article-shell img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--panel-border);
+  margin: 1.25rem 0 1.5rem;
+  background: rgba(255,255,255,0.02);
+}
+.article-shell table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.35rem 0 1.7rem;
+  font-size: 0.95rem;
+}
+.article-shell th,
+.article-shell td {
+  text-align: left;
+  padding: 0.85rem 0.8rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--panel-border);
+}
+.article-shell th {
+  color: var(--text);
+  font-weight: 700;
+}
+.article-shell blockquote {
+  margin: 1.25rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(255,255,255,0.025);
+  color: var(--text);
+}
+.article-shell code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92em;
+}
+.article-shell pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--panel-border);
+}
 .code-chip {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;

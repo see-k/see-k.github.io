@@ -1,0 +1,21 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" rx="28" fill="#0B0E11"/>
+  <text x="80" y="70" fill="#E8EDF2" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Illustrative cost–trust frontier</text>
+  <text x="80" y="105" fill="#95A3B3" font-family="Inter, Arial, sans-serif" font-size="16">Conceptual chart: DEAS should aim to improve domain trust and workflow fit without inheriting the full cost profile of broad AGI surfaces.</text>
+  <line x1="120" y1="560" x2="1080" y2="560" stroke="#95A3B3" stroke-width="2"/>
+  <line x1="120" y1="560" x2="120" y2="140" stroke="#95A3B3" stroke-width="2"/>
+  <text x="990" y="610" fill="#95A3B3" font-family="Inter, Arial, sans-serif" font-size="18">Increasing cost</text>
+  <text x="35" y="170" fill="#95A3B3" font-family="Inter, Arial, sans-serif" font-size="18" transform="rotate(-90 35 170)">Increasing domain trust / bounded usefulness</text>
+  <path d="M170 500 C 340 450, 470 370, 620 290 C 770 220, 860 180, 1010 155" stroke="#7C8EA5" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+  <path d="M180 470 C 300 410, 390 355, 500 300 C 610 250, 710 210, 820 190" stroke="#78E0D8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="860" cy="175" r="10" fill="#7C8EA5"/>
+  <text x="880" y="180" fill="#E8EDF2" font-family="Inter, Arial, sans-serif" font-size="18">Broad AGI app frontier</text>
+  <circle cx="820" cy="190" r="10" fill="#78E0D8"/>
+  <text x="840" y="240" fill="#78E0D8" font-family="Inter, Arial, sans-serif" font-size="18">DEAS target frontier</text>
+  <rect x="220" y="390" width="160" height="56" rx="18" fill="#12181F" stroke="rgba(125,147,171,0.22)"/>
+  <text x="245" y="425" fill="#E8EDF2" font-family="Inter, Arial, sans-serif" font-size="17">Spreadsheet baseline</text>
+  <rect x="490" y="295" width="170" height="56" rx="18" fill="#12181F" stroke="rgba(125,147,171,0.22)"/>
+  <text x="522" y="330" fill="#E8EDF2" font-family="Inter, Arial, sans-serif" font-size="17">Vertical AI SaaS</text>
+  <rect x="720" y="220" width="160" height="56" rx="18" fill="#12181F" stroke="rgba(120,224,216,0.22)"/>
+  <text x="756" y="255" fill="#E8EDF2" font-family="Inter, Arial, sans-serif" font-size="17">Finance DEAS</text>
+</svg>
